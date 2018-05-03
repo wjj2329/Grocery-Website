@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>FoodHub | Recipe Sharing</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet"> 
+    <link href="css/lightbox.css" rel="stylesheet"> 
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--head-->
+
+<body>
+	<div id="normalHeaderDiv">
+		<header id="header">      
+	        <div class="navbar navbar-inverse" role="banner">
+	            <div class="container">
+	                <div class="navbar-header">
+	                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	                        <span class="sr-only">Toggle navigation</span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                    </button>
+
+	                    <a class="navbar-brand" onclick="location.reload();">
+	                        <h1><img src="images/FoodHubLogo.png" width="300px" alt="logo"></h1>
+	                    </a>
+	                    
+	                </div>
+	                <div class="collapse navbar-collapse">
+	                    <ul class="nav navbar-nav navbar-right">
+	                        <li><a class="active" href="#" onclick="openHome()">Home</a></li>
+	                        <li><a href="#" onclick="openRecipe()"><i class="fa fa-search"></i>&nbspRecipe Search</a></li>  
+	                        <li><a href="#" onclick="openPlan()"><i class="fa fa-calendar"></i>&nbspMeal Planning</a></li> 
+	                        <li><a href="#" onclick="openGrocery()"><i class="fa fa-shopping-cart"></i>&nbspGrocery List</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </header>
+	</div>
+    <!--normalHeaderDiv-->
+
+    <div id="loginHeaderDiv">
+	    <header id="header">      
+	        <div class="navbar navbar-inverse" role="banner">
+	            <div class="container">
+	                <div class="navbar-header">
+	                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	                        <span class="sr-only">Toggle navigation</span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                    </button>
+
+	                    <a class="navbar-brand" onclick="openLogin()">
+	                        <h1><img src="images/FoodHubLogo.png" width="300px" alt="logo"></h1>
+	                    </a>
+	                    
+	                </div>
+	            </div>
+	        </div>
+	    </header>
+	</div>
+    <!--loginHeaderDiv-->
+
+    <div id="loginDiv">
+	    <section id="services">
+	        <div class="container">
+	        <div class="col-sm-6 col-sm-offset-3">
+
+	                <div class="row" id="loginBox">
+	                    <section id="home-slider">
+	                        <div class="container">
+	                            <div class="row">
+	                                <div class="main-slider">
+	                                    <div class="slide-text" style="margin-left: 30px;">
+	                                        <h1>Enter a username</h1>
+	                                        <p>Type in a username to create or view recipes and grocery lists</p>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+	                    </section>
+	                    <!--/#home-slider-->
+
+	                    <div class="col-sm-6 col-sm-offset-3">
+	                        <form id="main-contact-form" name="contact-form" method="post">
+	                            <div class="form-group">
+	                                <input id="inputName" type="text" name="username" class="form-control" required="required" placeholder="username" style="background-image: none; background-position: 0% 0%; background-repeat: repeat;">
+	                            </div>                  
+	                            <div class="form-group col-sm-10 col-sm-offset-1">
+	                                <input id="userNameForm" name="Login" class="btn btn-submit" value="Let's Go!" onclick="login()">
+	                            </div>
+	                        </form>
+	                        <div style="height: 80px;"></div>
+	                    </div>
+	                </div>
+
+	            </div>
+	        </div>
+	    </section>
+    </div>
+    <!--loginDiv-->
+
+    <div id="homePageDiv">
+    	<section id="home-slider">
+        <div class="container">
+            <div class="row">
+                <div class="main-slider">
+                    <div class="slide-text">
+                        <h1>Welcome, <span class="userName">User!</span></h1>
+                        <p>FoodHub is Built on a Three-Step Process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+    	</section>
+    	<!--/#Welcomer-->
+
+    	<section id="services">
+	        <div class="container">
+	            <div class="row" id="optionsBox">
+	                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+	                    <div class="single-service">
+	                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
+	                            <a onClick="openRecipe()"><i style="font-size: 100px;  color: #BBE2BC; padding-bottom:10px;" class="fa fa-search"></i></a>
+	                        </div>
+	                        <a onClick="openRecipe()">
+	                        	<h2>1. Search Recipes</h2>
+	                        	<p style="color: gray;">Search a database of 350,000 recipes to choose food you'd like to eat...</p>
+	                    	</a>
+	                    </div>
+	                </div>
+	                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+	                    <div class="single-service">
+	                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
+	                            <a onClick="openPlan()"><i style="font-size: 100px;  color: #BBE2BC; padding-bottom:10px;" class="fa fa-calendar"></i></a>
+	                        </div>
+	                        <a onClick="openPlan()">
+	                        	<h2>2. Plan Meals</h2>
+	                        	<p style="color: gray;">Create a Meal Plan for the week using recipes you selected...</p>
+	                    	</a>
+	                    </div>
+	                </div>
+	                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
+	                    <div class="single-service">
+	                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
+	                            <a onClick="openGrocery()"><i style="font-size: 100px; color: #BBE2BC; padding-bottom:10px;" class="fa fa-shopping-cart"></i></a>
+	                        </div>
+	                        <a onClick="openGrocery()">
+	                        	<h2>3. Grocery List</h2>
+	                        	<p style="color: gray;">Take the groceries from the recipes, add any other ones you may need, and head to the store!</p>
+	                    	</a>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+    	</section>
+    	<!--/#HomePageOptions-->
+    </div>
+    <!--homePageDiv-->
+
+    <div id="planPageDiv">
+	    <section id="page-breadcrumb">
+	        <div class="vertical-center">
+	             <div class="container">
+	                <div class="row" id="searchOverlay">
+	                    <div class="action">
+	                        <div class="col-sm-8" style="padding-left: 30px;">
+	                            <h1 class="title">Meal Planning</h1>
+	                            <p>6 Days to do whatever you'd like... and a Sabbath to rest with leftovers.</p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	   </section>
+	    <!--/#breadcrumb/search-->
+
+	    <center><div id="choices"></div></center>
+	    <section class="container">        
+	        <div class="cal-table">
+	            <div class="row groceryTable" style="margin-bottom: 30px;">
+	                <div class="col-sm-6 col-md-2 wow fadeInLeft" style="height:100%;"  data-wow-duration="1000ms" data-wow-delay="100ms">
+	                    <div class="single-cal cal-one" style="height:100%;">
+	                        <div class="table-heading">
+	                            <p class="day-name">Monday</p>
+	                        </div>
+	                        <div class="table-body text-center" id="monday">
+				    			<p>Enter Dish ID:</p>
+				    			<div style="width: 100%">
+				    				<input id="monform"  style="width: 80%"></input>
+			    				</div>
+	                            <a href="#" onclick="doDay(monday)"><i class="fa fa-plus-circle"></i></a>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="col-sm-6 col-md-2 wow fadeInLeft" style="height:100%;"  data-wow-duration="1000ms" data-wow-delay="200ms">
+	                    <div class="single-cal cal-two" style="height:100%;">
+	                        <div class="table-heading">
+	                            <p class="day-name">Tuesday</p>
+	                        </div>                        
+	                        <div class="table-body text-center" id="tuesday">
+				    			<p>Enter Dish ID:</p>
+				    			<div style="width: 100%">
+				    				<input id="tuesform" style="width: 80%"></input>
+				    			</div>
+	                            <a href="#" onclick="doDay(tuesday)"><i class="fa fa-plus-circle"></i></a> 
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="col-sm-6 col-md-2 wow fadeInLeft" style="height:100%;"  data-wow-duration="1000ms" data-wow-delay="300ms">
+	                    <div class="single-cal cal-three" style="height:100%;">
+	                        <div class="table-heading">
+	                            <p class="day-name">Wednesday</p>
+	                        </div>
+	                        <div class="table-body text-center" id="wednesday">
+							    <p>Enter Dish ID:</p>
+							    <div style="width: 100%">
+							    	<input id="wedform" style="width: 80%"></input>
+							    </div>
+	                            <a href="#" onclick="doDay(wednesday)"><i class="fa fa-plus-circle"></i></a>                           
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="col-sm-6 col-md-2 wow fadeInLeft" style="height:100%;"  data-wow-duration="1000ms" data-wow-delay="400ms">
+	                    <div class="single-cal cal-four" style="height:100%;">
+	                        <div class="table-heading">
+	                            <p class="day-name">Thursday</p>
+	                        </div>
+	                        <div class="table-body text-center" id="thursday">
+							    <p>Enter Dish ID:</p>
+							    <div style="width: 100%">
+							    	<input id="thursform"  style="width: 80%"></input>
+							    </div>
+	                            <a href="#" onclick="doDay(thursday)"><i class="fa fa-plus-circle"></i></a>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="col-sm-6 col-md-2 wow fadeInLeft" style="height:100%;"  data-wow-duration="1000ms" data-wow-delay="500ms">
+	                    <div class="single-cal cal-two" style="height:100%;">
+	                        <div class="table-heading">
+	                            <p class="day-name">Friday</p>
+	                        </div>                         
+	                        <div class="table-body text-center" id="friday">
+							    <p>Enter Dish ID:</p>
+							    <div style="width: 100%">
+							    	<input id="friform" style="width: 80%"></input>
+						    	</div>
+	                            <a href="#" onclick="doDay(friday)"><i class="fa fa-plus-circle"></i></a>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="col-sm-6 col-md-2 wow fadeInLeft" style="height:100%;"  data-wow-duration="1000ms" data-wow-delay="600ms">
+	                    <div class="single-cal cal-one" style="height:100%;">
+	                        <div class="table-heading">
+	                            <p class="day-name">Saturday</p>
+	                        </div>                        
+	                        <div class="table-body text-center" id="saturday">
+							    <p>Enter Dish ID:</p>
+							    <div style="width: 100%">
+							    	<input id="satform" style="width: 80%"></input>
+							    </div>
+	                            <a href="#" onclick="doDay(saturday)"><i class="fa fa-plus-circle"></i></a>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+
+	            <div class="row">
+	                <h3>Groceries So Far:</h3>
+	            </div>
+	            <div class="row">
+			 <div class="col-sm-6 col-md-2" id="m"></div>  
+			 <div class="col-sm-6 col-md-2" id="t"></div> 
+			 <div class="col-sm-6 col-md-2" id="w"></div> 
+			 <div class="col-sm-6 col-md-2" id="th"></div> 
+			 <div class="col-sm-6 col-md-2" id="f"></div> 
+			 <div class="col-sm-6 col-md-2" id="s"></div>    
+	            </div>
+
+	        </div>
+	    </section> <!--/#calendar-->
+
+	    <div class="row">
+	        <div class="col-sm-12">
+	            <div id="addToCart">
+	                <a href="#" onclick="openGrocery()">
+	                    <i class="fa fa-shopping-cart"></i>
+	                    <p>Go to My Grocery List</p>
+	                </a>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<!--planPageDiv-->
+
+	<div id="grocerySearchDiv">
+		<section id="page-breadcrumb">
+	        <div class="vertical-center sun">
+	             <div class="container">
+	                <div class="row wow zoomInUp" id="searchOverlay" data-wow-duration="800ms">
+	                    <div class="action">
+	                        <div class="col-sm-3" style="padding-left: 30px;">
+	                            <h1 class="title">Grocery Search</h1>
+	                            <p>Add Specific Items to your List.</p>
+	                        </div>
+	                        <div class="col-sm-9 pull-right search">
+	                            <form role="form">
+	                                <div id="searchfield">
+	                                    <input type="text"  name="foods" id="autocomplete" class="search-form"  placeholder="Search" data-toggle="tooltip" data-placement="bottom" title="Search the USDA's National Nutritional Database for a food item, or simply type your own!"><i id="grocerySearchIcon" class="fa fa-search"></i>
+	                                </div>
+	                            </form>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	   </section>
+	    <!--/#action-->
+
+	    <div class="container">
+	    	<div class="row">
+	    		<div class="col-lg-12">
+	    			<h3>Your Groceries:</h3>
+				     <div id="outputbox">
+				     	<ul id="outputcontent"></ul>
+				     </div>
+			     </div>
+			</div>
+		</div>
+	</div>
+	<!--grocerySearchDiv-->
+
+	<div id="recipeSearchDiv">
+		<section id="page-breadcrumb">
+	        <div class="vertical-center">
+	             <div class="container">
+	                <div class="row  wow zoomIn" id="searchOverlay" data-wow-duration="800ms">
+	                    <div class="action">
+	                        <div class="col-sm-3" style="padding-left: 30px;">
+	                            <h1 class="title">Recipe Search</h1>
+	                            <p>What do you want to eat?</p>
+	                        </div>
+	                        <div class="col-sm-9 pull-right search">
+	                            <form id="myform" role="form">
+	                                <div >
+	                                    <input id="inputbox" type="text" class="search-form" autocomplete="off" placeholder="Search"><i id=icon class="fa fa-search"></i>
+	                                </div>
+	                            </form>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	   	</section>
+   		<!--recipeSearchBox-->
+		<div id="searchspace">
+		</div>
+	    <section id="recipeSearch">
+	        <div class="container">
+	            <div class="row">
+	                <div class="recipeSearch-items">
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item maindish appetizer">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img id="pic1" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a id="link1" target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic1" data-lightbox="example-set" ><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add1" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info ">
+	                                <h2><span style="font-weight: bold;"  id="text1"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id1"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item maindish salad">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img id="pic2" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')"  id="link2"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a  id="fancypic2" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add2" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info">
+	                                <h2><span style="font-weight: bold;"  id="text2"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id2"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item sidedish appetizer">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img id="pic3" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link3"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image">><a id="fancypic3" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add3" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info ">
+	                                <h2><span style="font-weight: bold;"  id="text3"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id3"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item sidedish appetizer">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img id="pic4" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link4"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic4" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add4" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info ">
+	                                <h2><span style="font-weight: bold;"  id="text4"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id4"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item maindish breakfast">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img  id="pic5" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" href="recipeSearch-details.html" id="link5"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic5" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add5" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info ">
+	                                <h2><span style="font-weight: bold;"  id="text5"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id5"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item maindish soups">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img id="pic6" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com">><a href="recipeSearch-details.html" id="link6"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a  id="fancypic6" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add6" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info ">
+	                                <h2><span style="font-weight: bold;"  id="text6"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id6"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item maindish salad">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img id="pic7" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link7"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic7" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add7" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info ">
+	                                <h2><span style="font-weight: bold;"  id="text7"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id7"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item sidedish appetizer">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img id="pic8" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link8"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic8" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add8" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info ">
+	                                <h2><span style="font-weight: bold;"  id="text8"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id8"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item maindish appetizer">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img id="pic9" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link9"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic9" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add9" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info ">
+	                                <h2><span style="font-weight: bold;"  id="text9"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id9"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item maindish soups">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img  id="pic10" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link10"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic10" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add10" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info ">
+	                                <h2><span style="font-weight: bold;"  id="text10"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id10"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item sidedish salad">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img  id="pic11" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" href="recipeSearch-details.html" id="link11"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic11" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add11" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info ">
+	                                <h2><span style="font-weight: bold;"  id="text11"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id11"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item maindish soups">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img  id="pic12" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" href="recipeSearch-details.html"  id="link12"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic12" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add12" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info ">
+	                                <h2><span style="font-weight: bold;"  id="text12"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id12"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item sidedish breakfast">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img id="pic13" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link13"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic13" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add13" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info ">
+	                                <h2><span style="font-weight: bold;"  id="text13"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id13"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item sidedish appetizer">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img id="pic14" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link14"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic14" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add14" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info ">
+	                                <h2><span style="font-weight: bold;"  id="text14"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id14"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item maindish appetizer">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img  id="pic15" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link15"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a   id="fancypic15" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add15" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info ">
+	                                <h2><span style="font-weight: bold;"  id="text15"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id15"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-sm-4 col-md-3 recipeSearch-item maindish appetizer">
+	                        <div class="recipeSearch-wrapper">
+	                            <div class="recipeSearch-single">
+	                                <div class="recipeSearch-thumb">
+	                                    <img id="pic16" class="img-responsive" alt="">
+	                                </div>
+	                                <div class="recipeSearch-view">
+	                                    <ul class="nav nav-pills">
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link16"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a  id="fancypic16" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add16" ><i class="fa fa-thumbs-up"></i></a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
+	                            <div class="recipeSearch-info ">
+	                                <h2><span style="font-weight: bold;"  id="text16"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id16"></span></h2>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+	    <!--recipeSearchResults-->
+	</div>'
+	<!--recipeSearchDiv-->
+
+	<div id="likedRecipes">
+	</div>
+
+    <div id="footerSpacer">
+    </div>
+    <footer id="footer" style="position: fixed; bottom: 0px; width: 100%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="copyright-text text-center">
+                        <p>&copy;FoodHub</p>                      
+                        <p>Powered by <a target="_blank" href="http://http://www.bigoven.com/">Big Oven</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer-->
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lightbox.min.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+    <script type="text/javascript" src="js/foods-autocomplete.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/searchjavascript.js"></script>
+    <script type="text/javascript" src="js/jqueryOwn.js"></script>  
+</body>
+</html>

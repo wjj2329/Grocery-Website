@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Meal Plan | FoodHub</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet"> 
+    <link href="css/animate.min.css" rel="stylesheet"> 
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+	<header id="header">      
+        <div class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="index.html">
+                        <h1><img src="images/logo.png" alt="logo"></h1>
+                    </a>
+                    
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a class="active" href="mealPlan.html"><i class="fa fa-calendar"></i>&nbspMeal Planning</a></li> 
+                        <li><a href="groceryList.html"><i class="fa fa-shopping-cart"></i>&nbspGrocery List</a></li>
+                        <li><a href="recipeSearch.html"><i class="fa fa-search"></i>&nbspRecipe Search</a></li>            
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--/#header-->
+
+    <section id="page-breadcrumb">
+        <div class="vertical-center">
+             <div class="container">
+                <div class="row" id="searchOverlay">
+                    <div class="action">
+                        <div class="col-sm-8" style="padding-left: 30px;">
+                            <h1 class="title">Meal Planning</h1>
+                            <p>6 Days to do whatever you'd like... and a Sabbath to rest with leftovers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+    <!--/#action-->
+    <center><div id="choices">
+    </div></center>
+    <section class="container">        
+        <div class="cal-table">
+            <div class="row groceryTable" style="margin-bottom: 30px;">
+                <div class="col-sm-6 col-md-2" style="height:100%;">
+                    <div class="single-cal cal-one" style="height:100%;">
+                        <div class="table-heading">
+                            <p class="day-name">Monday</p>
+                        </div>
+                        <div class="table-body text-center" id="monday">
+			    <p>Enter id of desired dish</p>
+			    <input id="monform"></input>
+                            <a href="#" onclick="doDay(monday)"><i class="fa fa-plus-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-2" style="height:100%;">
+                    <div class="single-cal cal-two" style="height:100%;">
+                        <div class="table-heading">
+                            <p class="day-name">Tuesday</p>
+                        </div>                        
+                        <div class="table-body text-center" id="tuesday">
+			    <p>Enter id of desired dish</p>
+			    <input id="tuesform"></input>
+                            <a href="#" onclick="doDay(tuesday)"><i class="fa fa-plus-circle"></i></a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-2" style="height:100%;">
+                    <div class="single-cal cal-three" style="height:100%;">
+                        <div class="table-heading">
+                            <p class="day-name">Wednesday</p>
+                        </div>
+                        <div class="table-body text-center" id="wednesday">
+			    <p>Enter id of desired dish</p>
+			    <input id="wedform"></input>
+                            <a href="#" onclick="doDay(wednesday)"><i class="fa fa-plus-circle"></i></a>                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-2" style="height:100%;">
+                    <div class="single-cal cal-four" style="height:100%;">
+                        <div class="table-heading">
+                            <p class="day-name">Thursday</p>
+                        </div>
+                        <div class="table-body text-center" id="thursday">
+			    <p>Enter id of desired dish</p>
+			    <input id="thursform"></input>
+                            <a href="#" onclick="doDay(thursday)"><i class="fa fa-plus-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-2" style="height:100%;">
+                    <div class="single-cal cal-two" style="height:100%;">
+                        <div class="table-heading">
+                            <p class="day-name">Friday</p>
+                        </div>                         
+                        <div class="table-body text-center" id="friday">
+			    <p>Enter id of desired dish</p>
+			    <input id="friform"></input>
+                            <a href="#" onclick="doDay(friday)"><i class="fa fa-plus-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-2" style="height:100%;">
+                    <div class="single-cal cal-one" style="height:100%;">
+                        <div class="table-heading">
+                            <p class="day-name">Saturday</p>
+                        </div>                        
+                        <div class="table-body text-center" id="saturday">
+			    <p>Enter id of desired dish</p>
+			    <input id="satform"></input>
+                            <a href="#" onclick="doDay(saturday)"><i class="fa fa-plus-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <h3>Groceries So Far:</h3>
+            </div>
+            <div class="row">
+		 <div class="col-sm-6 col-md-2" id="m"></div>  
+		 <div class="col-sm-6 col-md-2" id="t"></div> 
+		 <div class="col-sm-6 col-md-2" id="w"></div> 
+		 <div class="col-sm-6 col-md-2" id="th"></div> 
+		 <div class="col-sm-6 col-md-2" id="f"></div> 
+		 <div class="col-sm-6 col-md-2" id="s"></div>    
+            </div>
+
+        </div>
+    </section> <!--/#cal-table-->
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="addToCart">
+                <a href="portfolioone.html">
+                    <i class="fa fa-shopping-cart"></i>
+                    <p>Go to My Grocery List</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footerSpacer">
+    </div>
+    <footer id="footer" style="position: fixed; bottom: 0px; width: 100%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="copyright-text text-center">
+                        <p>&copy; Our Group.</p>
+                        <p>Powered by <a target="_blank" href="http://http://www.bigoven.com/">Big Oven</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>   
+    <script type="text/javascript" src="js/jqueryOwn.js"></script>   
+</body>
+</html>
